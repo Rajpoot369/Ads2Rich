@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdRich - Earn with Ads</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            color: black;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 18px;
+            background: #ff5e62;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #ff9966;
+        }
+        #adContainer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>AdRich - Watch & Earn</h1>
+    
+    <div class="container">
+        <h2>Watch Ads & Earn</h2>
+        <button onclick="showAd()">Watch Ad & Earn</button>
+        
+        <h2>Spin & Win</h2>
+        <button onclick="spinAndWin()">Spin Now</button>
+
+        <h2>Tap to Earn</h2>
+        <button onclick="tapToEarn()">Tap & Earn</button>
+
+        <h2>Leaderboard</h2>
+        <button onclick="showLeaderboard()">View Leaderboard</button>
+
+        <h2>Daily Bonus</h2>
+        <button onclick="claimBonus()">Claim Bonus</button>
+
+        <div id="adContainer"></div>
+    </div>
+
+    <script>
+        function showAd() {
+            alert("Ad is being shown... Earn your coins!");
+            loadAd();
+        }
+
+        function spinAndWin() {
+            alert("Spinning... Wait for results!");
+            loadAd();
+            setTimeout(() => { alert("You won some coins!"); }, 2000);
+        }
+
+        function tapToEarn() {
+            alert("Tap registered... Showing ad first!");
+            loadAd();
+            setTimeout(() => { alert("Coins added!"); }, 2000);
+        }
+
+        function showLeaderboard() {
+            alert("Coming Soon: Leaderboard System!");
+        }
+
+        function claimBonus() {
+            alert("Bonus Claimed! Come back tomorrow for more.");
+        }
+
+        function loadAd() {
+            document.getElementById("adContainer").innerHTML = "";
+            var script = document.createElement('script');
+            script.src = '//whephiwums.com/sdk.js';
+            script.setAttribute('data-zone', '9052155');
+            script.setAttribute('data-sdk', 'show_9052155');
+            document.getElementById("adContainer").appendChild(script);
+        }
+    </script>
+</body>
+</html>
